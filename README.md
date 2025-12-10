@@ -24,7 +24,7 @@ Before running the setup script, ensure our system has the required dependencies
 Run this one-liner to check for missing packages or commands:
 
 ```bash
-for i in bash tar bat tree unzip fc-list fontconfig bash-completion fastfetch starship fzf trash-cli multitail; do if pacman -Qi "$i" &>/dev/null; then echo "[OK-PKG] $i"; elif type -P "$i" &>/dev/null; then echo "[OK-CMD] $i"; else echo -e "\e[31m[MISSING] $i\e[0m"; fi; done
+for i in bash tar bat tree unzip fc-list fontconfig bash-completion fastfetch starship fzf trash-cli multitail zoxide ripgrep; do if pacman -Qi "$i" &>/dev/null; then echo "[OK-PKG] $i"; elif type -P "$i" &>/dev/null; then echo "[OK-CMD] $i"; else echo -e "\e[31m[MISSING] $i\e[0m"; fi; done
 ````
 
 **Example Output:**

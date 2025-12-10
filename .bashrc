@@ -134,6 +134,32 @@ fi
 
 # --- FUNCTIONS ---
 
+# One-command save for mybash repo
+bashsave() {
+    # 1. Require a commit message
+    if [ -z "$1" ]; then
+        echo "⚠️  Error: You must provide a commit message!"
+        echo "Usage: bashsave 'my message here'"
+        return 1
+    fi
+
+    # 2. Save current location
+    local original_dir=$(pwd)
+
+    # 3. Go to mybash repo
+    echo "🚀 Saving configurations..."
+    cd "$MYBASH_DIR" || return
+
+    # 4. Git Magic
+    git add .
+    git commit -m "$1"
+    git push
+
+    # 5. Return to original location
+    cd "$original_dir" || return
+    echo "✅ Done! Settings pushed to GitHub."
+}
+
 # Extract archives wrapper
 extract() {
 	for archive in "$@"; do

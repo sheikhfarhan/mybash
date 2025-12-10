@@ -95,6 +95,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias bd='cd "$OLDPWD"' # Back directory
+alias cddockerapps='cd /mnt/pool01/dockerapps'
+alias cdmedia='cd /mnt/pool01/media'
 
 # System
 alias diskspace="du -S | sort -n -r | more"
@@ -114,6 +116,7 @@ alias docker-clean=' \
   docker image prune -f ; \
   docker network prune -f ; \
   docker volume prune -f '
+alias dockercupf='docker compose up -f --force-recreate'
 
 # Grep -> Ripgrep (rg) if available
 if command -v rg &> /dev/null; then
